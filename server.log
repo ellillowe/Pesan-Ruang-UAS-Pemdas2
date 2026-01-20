@@ -1,0 +1,24 @@
+2026/01/19 13:43:53 Starting server on port 8080
+2026/01/19 13:43:59 [REPORT] Starting GetReportSummary for year=2026, month=1
+2026/01/19 13:43:59 [REPORT] GetAllBookings returned 3 bookings, err=<nil>
+2026/01/19 13:43:59 [REPORT] Total bookings from DB: 3 for year=2026 month=1
+2026/01/19 13:43:59 [REPORT] Booking 0: ID=1, Date="2026-01-20", Status="approved"
+2026/01/19 13:43:59 [REPORT]   -> Parsed: 2026-01-20 00:00:00 +0000 UTC (year=2026, month=1)
+2026/01/19 13:43:59 [REPORT]   -> INCLUDED
+2026/01/19 13:43:59 [REPORT] Booking 1: ID=3, Date="2026-01-19", Status="approved"
+2026/01/19 13:43:59 [REPORT]   -> Parsed: 2026-01-19 00:00:00 +0000 UTC (year=2026, month=1)
+2026/01/19 13:43:59 [REPORT]   -> INCLUDED
+2026/01/19 13:43:59 [REPORT] Booking 2: ID=2, Date="2026-01-19", Status="approved"
+2026/01/19 13:43:59 [REPORT]   -> Parsed: 2026-01-19 00:00:00 +0000 UTC (year=2026, month=1)
+2026/01/19 13:43:59 [REPORT]   -> INCLUDED
+2026/01/19 13:43:59 [REPORT] Found 3 matching bookings
+2026/01/19 13:43:59 [REPORT] Processing booking ID=1, RoomID=2
+2026/01/19 13:43:59 [REPORT]   -> Room: Ruang A103
+2026/01/19 13:43:59 [REPORT]   -> Hours: 2.83
+2026/01/19 13:43:59 [REPORT] Processing booking ID=3, RoomID=2
+2026/01/19 13:43:59 [REPORT]   -> Room: Ruang A103
+2026/01/19 13:43:59 [REPORT]   -> Hours: 3.00
+2026/01/19 13:43:59 [REPORT] Processing booking ID=2, RoomID=1
+2026/01/19 13:43:59 [REPORT]   -> Room: Ruang A101
+2026/01/19 13:43:59 [REPORT]   -> Hours: 0.03
+2026/01/19 13:43:59 [REPORT] Final summary entries: 2
