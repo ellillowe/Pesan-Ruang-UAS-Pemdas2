@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"os"
 	"pesan-ruang/config"
 	"pesan-ruang/handlers"
 	"pesan-ruang/repository"
@@ -11,18 +12,24 @@ import (
 )
 
 func main() {
-	// Load configuration
-	cfg, err := config.LoadConfig("config.json")
-	if err != nil {
-		log.Fatalf("Failed to load config: %v", err)
-	}
+    cfg, err := config.LoadConfig("config.json")
+    if err != nil {
+        log.Fatalf("Failed to load config: %v", err)
+    }
 
-	// Initialize database
-	db, err := config.InitDB(cfg)
-	if err != nil {
-		log.Fatalf("Failed to initialize database: %v", err)
-	}
-	defer db.Close()
+    if os.Getenv("DB_HOST") != "" {
+        cfg.Database.Host = os.Getenv("DB_HOST")
+        cfg.Database.User = os.Getenv("DB_USER")
+        cfg.Database.Password = os.Getenv("DB_PASS")
+        cfg.Database.Port = os.Getenv("DB_PORT")
+        cfg.Database.Name = os.Getenv("DB_NAME")
+    }
+
+    db, err := config.InitDB(cfg)
+    if err != nil {
+        log.Fatalf("Failed to initialize database: %v", err)
+    }
+    defer db.Close()
 
 	// Initialize repositories
 	roomRepo := repository.NewRoomRepository(db)
@@ -185,7 +192,8 @@ func main() {
 		}
 	})
 
-	port := "8080"
+	port := os.Getenv("PORT")
+
 	if port == "" {
 		port = "8080"
 	}
